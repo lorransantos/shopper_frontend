@@ -1,9 +1,11 @@
 import LoginForm from './LoginForm';
 import bag from '../../images/bag-order.png';
 import * as style from './styles';
+import { useNavigate } from 'react-router-dom';
+import { goToSignup } from '../../routes/coordinator';
 
 const LoginPage = () => {
-  console.log('oi no login');
+  const navigate = useNavigate();
   return (
     <style.Container>
       <style.SideBar>
@@ -17,7 +19,9 @@ const LoginPage = () => {
           <LoginForm />
           <p>
             Não possui conta?{' '}
-            <style.SignupButton>Cadastre-se</style.SignupButton>
+            <style.SignupButton onClick={() => goToSignup(navigate)}>
+              Cadastre-se
+            </style.SignupButton>
           </p>
         </style.LoginCard>
       </style.LoginContainer>

@@ -1,13 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import { login } from '../../services/User';
-import * as style from './styles'
+import * as style from './styles';
 
 const LoginForm = () => {
   const [form, onChange, clear] = useForm({ email: '', password: '' });
+  const navigate = useNavigate();
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    login(form, clear);
+    login(form, clear, navigate);
   };
 
   return (

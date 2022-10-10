@@ -34,15 +34,15 @@ export const addOrder = (token, body) => {
     });
 };
 
-export const deleteOrder = (token) => {
-  console.log('remove', token);
-  const body = {
-    orderId: '964906df-30d9-4835-9b95-e34645d33c93',
-  };
+export const deleteOrder = (token, body) => {
+  // console.log('remove', token);
+  // const body = {
+  //   orderId: '964906df-30d9-4835-9b95-e34645d33c93',
+  // };
   console.log('remove', body);
 
   axios
-    .delete(`${BASE_URL}/order/delete-order`, body, {
+    .put(`${BASE_URL}/order/delete-order`, body, {
       headers: {
         authorization:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiZGYxN2M4LWI3NTctNDM5MC05ODk4LWFlOTY0YmI0YTUwNCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2NTM0NTI2MCwiZXhwIjoxNjY1NDMxNjYwfQ.1jGxP2QFCCy0jBhuXDApp5vzjSHWL45asHIAvRLqutA',
@@ -55,7 +55,6 @@ export const deleteOrder = (token) => {
     .catch((error) => {
       console.log('deu ruim');
       console.log(token);
-      console.log(body);
       console.log(error);
     });
 };

@@ -20,17 +20,18 @@ export const SideBar = styled.div`
   }
 `;
 
-export const LoginContainer = styled.div`
+export const SignupContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60vw;
   height: 100vh;
   background-image: linear-gradient(120deg, #579ee0, #800080);
-  box-shadow: -4px 0px 12px #999999;
+  box-shadow: 4px 0px 12px #999999;
 `;
 
-export const LoginCard = styled.div`
+export const SignupCard = styled.div`
+  box-shadow: 0px 0px 4px #cccccc;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -45,11 +46,6 @@ export const LoginCard = styled.div`
     height: 16px;
     background-color: #000000;
   }
-`;
-
-export const HorizontalLine = styled.hr`
-  width: 90%;
-  margin-bottom: 32px;
 `;
 
 //// form

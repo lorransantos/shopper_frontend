@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import GlobalContext from '../../global/Context';
 import { addOrder, deleteOrder, getOrders } from '../../services/Orders';
-import {BsFillTrashFill} from 'react-icons/bs'
+import { BsFillTrashFill } from 'react-icons/bs';
 import SideBarForm from './SideBarForm';
 import * as style from './style';
 
