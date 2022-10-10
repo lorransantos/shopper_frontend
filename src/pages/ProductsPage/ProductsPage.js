@@ -1,19 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import Header from '../../components/Header/Header';
+import SideBar from '../../components/SideBar/SideBar';
 import GlobalContext from '../../global/Context';
-import { getProducts } from '../../services/Product';
+import { addOrder, getProducts } from '../../services/Product';
 import * as style from './style.js';
 
 const ProductsPage = () => {
   const { products, setProducts } = useContext(GlobalContext);
 
   const token = localStorage.getItem('token');
-  // console.log(token);
-  getProducts(token, setProducts);
-  // console.log(products && products);
+  useEffect(() => {
+    getProducts(token, setProducts);
+  }, [token, setProducts]);
 
   return (
     <>
-      {/* <h1>Selecione abaixo os seus produtos</h1> */}
+      <Header />
+      <SideBar />
       <style.Container>
         {products &&
           products.map((item, index) => {
@@ -23,7 +26,17 @@ const ProductsPage = () => {
                   <h2>{item.name}</h2>
                 </style.CardTytle>
                 <p>R$ {item.price}</p>
-                <style.Button>Comprar</style.Button>
+                <style.Button
+                  onClick={() => {
+                    const body = {
+                      productId: item.id,
+                      quantity: 1,
+                    };
+                    addOrder(token, body);
+                  }}
+                >
+                  Comprar
+                </style.Button>
               </style.Card>
             );
           })}

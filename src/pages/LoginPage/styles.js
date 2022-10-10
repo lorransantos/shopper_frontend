@@ -3,11 +3,22 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   width: 100vw;
-`
+`;
 
 export const SideBar = styled.div`
-width: 40vw;
-`
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  h1 {
+    color: #579ee0;
+  }
+  img {
+    width: 350px;
+  }
+`;
 
 export const LoginContainer = styled.div`
   display: flex;
@@ -56,7 +67,7 @@ export const Input = styled.input`
   font-size: 16px;
   border: none;
   border-bottom: 1px solid #111111;
-  width: 100%
+  width: 100%;
 `;
 
 export const Button = styled.button`
@@ -69,6 +80,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 20px;
   margin: 20px 0px 0px;
+  cursor: pointer;
 `;
 
 export const SignupButton = styled.button`
@@ -76,4 +88,5 @@ export const SignupButton = styled.button`
   background-color: #00000000;
   border: none;
   font-size: 16px;
+  cursor: pointer;
 `;
