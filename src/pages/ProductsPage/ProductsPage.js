@@ -2,16 +2,18 @@ import { useContext, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import SideBar from '../../components/SideBar/SideBar';
 import GlobalContext from '../../global/Context';
-import { addOrder, getProducts } from '../../services/Product';
+import { addOrder } from '../../services/Orders';
+import { getProducts } from '../../services/Product';
 import * as style from './style.js';
 
 const ProductsPage = () => {
-  const { products, setProducts } = useContext(GlobalContext);
+  const { products, setProducts, render, setRender } =
+    useContext(GlobalContext);
 
   const token = localStorage.getItem('token');
   useEffect(() => {
     getProducts(token, setProducts);
-  }, [token, setProducts]);
+  }, [token, setProducts, render]);
 
   return (
     <>
@@ -32,7 +34,7 @@ const ProductsPage = () => {
                       productId: item.id,
                       quantity: 1,
                     };
-                    addOrder(token, body);
+                    addOrder(token, body, render, setRender);
                   }}
                 >
                   Comprar

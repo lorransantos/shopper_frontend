@@ -3,7 +3,7 @@ import { addDeliveryOrder } from '../../services/Delivery';
 import * as style from './style';
 
 const SideBarForm = () => {
-  const [form, onChange, clear] = useForm({
+  const [form, onChange, clear, teste, setTeste] = useForm({
     receiveUserName: '',
     deliveryDate: '',
   });
@@ -12,8 +12,7 @@ const SideBarForm = () => {
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    addDeliveryOrder(token, form, clear);
-    console.log(form);
+    addDeliveryOrder(token, form, clear, teste, setTeste);
   };
 
   return (
@@ -32,9 +31,7 @@ const SideBarForm = () => {
         onChange={onChange}
         value={form.deliveryDate}
       />
-      <style.Button onClick={() => console.log('teste')}>
-        Finalizar compra
-      </style.Button>
+      <style.Button>Finalizar compra</style.Button>
     </style.Form>
   );
 };

@@ -17,7 +17,7 @@ export const Card = styled.div`
   border-radius: 20px;
   width: 15%;
   min-width: 220px;
-  height: 30vh;
+  height: 35vh;
   max-height: 300px;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ export const Card = styled.div`
 
 export const CardTytle = styled.div`
   background-color: #579ee0;
-  min-height: 40%;
+  min-height: 46%;
   max-height: 150px;
   display: flex;
   align-items: center;

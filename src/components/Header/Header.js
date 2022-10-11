@@ -8,12 +8,16 @@ import { goToHomePage, goToStock } from '../../routes/coordinator';
 
 const Header = (props) => {
   const { sideBar, setSideBar } = useContext(GlobalContext);
+
   const navigate = useNavigate();
 
   return (
     <style.Container>
       <style.HeadersGroups>
-        <style.ButtonHome onClick={() => goToHomePage(navigate)} cursor={'pointer'}> 
+        <style.ButtonHome
+          onClick={() => goToHomePage(navigate)}
+          cursor={'pointer'}
+        >
           <img src={logo} alt={'teste'} />
           <h1>Seu Mercado Digital</h1>
         </style.ButtonHome>
@@ -28,11 +32,11 @@ const Header = (props) => {
           <style.Button onClick={() => goToStock(navigate)}>
             Estoque
           </style.Button>
-        )}
-        {/* <style.Button onClick={() => goToStock(navigate)}>Estoque</style.Button> */}
-
+        )}        
         <AiOutlineShoppingCart
-          onClick={() => setSideBar(!sideBar)}
+          onClick={() => {
+            setSideBar(!sideBar);
+          }}
           size={'40px'}
           color={'#ffffff'}
           cursor={'pointer'}

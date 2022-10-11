@@ -9,7 +9,7 @@ export const addDeliveryOrder = (token, body, clear) => {
       },
     })
     .then((res) => {
-      console.log(res.data);
+      alert('Compra realizada com sucesso!')
       clear();
     })
     .catch((err) => console.log(err.data));

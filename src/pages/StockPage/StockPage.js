@@ -12,6 +12,7 @@ const StockPage = () => {
 
   useEffect(() => {
     getProducts(token, setProducts);
+    console.log('pagina de estoque');
   }, [token, setProducts]);
 
   return (
@@ -22,7 +23,6 @@ const StockPage = () => {
         <style.StockTable>
           <thead>
             <tr>
-              <th>id</th>
               <th>nome</th>
               <th>preço</th>
               <th>quantidade</th>
@@ -33,12 +33,9 @@ const StockPage = () => {
               products.map((item) => {
                 return (
                   <tr key={item.id}>
-                    {/* <tr> */}
-                    <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>R$ {item.price}</td>
                     <td>{item.qty_stock} und.</td>
-                    {/* </tr> */}
                   </tr>
                 );
               })}

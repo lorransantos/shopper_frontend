@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
+import { signup } from '../../services/User';
 import * as style from './style';
 
 const SignupForm = () => {
@@ -13,13 +14,13 @@ const SignupForm = () => {
 
   const onSubmitForm = (event) => {
     event.preventDefault();
+    const loginBody = {
+      email: form.email,
+      password: form.password
+    }
+    signup(form, loginBody, clear, navigate);
     console.log(form, clear);
   };
-
-  // "name": "Vegeta",
-  // "email": "vegeta@gmail.com",
-  // "password": "123456",
-  // "role": "ADMIN"
 
   return (
     <style.Form onSubmit={onSubmitForm}>

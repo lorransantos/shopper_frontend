@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import GlobalContext from './Context';
 
-const GlobalProvider = (props) => {
+const GlobalState = (props) => {
   const [products, setProducts] = useState([]);
   const [sideBar, setSideBar] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [render, setRender] = useState(false);
 
   return (
     <div>
@@ -17,8 +17,8 @@ const GlobalProvider = (props) => {
           setShoppingCart,
           sideBar,
           setSideBar,
-          total,
-          setTotal,
+          render,
+          setRender,
         }}
       >
         {props.children}
@@ -27,4 +27,4 @@ const GlobalProvider = (props) => {
   );
 };
 
-export default GlobalProvider;
+export default GlobalState;
