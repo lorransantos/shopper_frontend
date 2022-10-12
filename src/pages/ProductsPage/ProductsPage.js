@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import SideBar from '../../components/SideBar/SideBar';
 import GlobalContext from '../../global/Context';
+import useProtectPage from '../../hooks/usePortectPage';
 import { addOrder } from '../../services/Orders';
 import { getProducts } from '../../services/Product';
 import * as style from './style.js';
@@ -9,6 +10,8 @@ import * as style from './style.js';
 const ProductsPage = () => {
   const { products, setProducts, render, setRender } =
     useContext(GlobalContext);
+
+  useProtectPage();
 
   const token = localStorage.getItem('token');
   useEffect(() => {

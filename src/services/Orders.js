@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { useEffect } from 'react';
 import { BASE_URL } from '../constants/baseUrl';
 
 export const getOrders = (token, setShoppingCart) => {

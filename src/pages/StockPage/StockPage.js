@@ -2,11 +2,14 @@ import { useContext, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import SideBar from '../../components/SideBar/SideBar';
 import GlobalContext from '../../global/Context';
+import ProtectPage from '../../hooks/usePortectPage';
 import { getProducts } from '../../services/Product';
 import * as style from './style';
 
 const StockPage = () => {
   const { products, setProducts } = useContext(GlobalContext);
+
+  ProtectPage();
 
   const token = localStorage.getItem('token');
 

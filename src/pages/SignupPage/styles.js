@@ -48,6 +48,14 @@ export const SignupCard = styled.div`
   }
 `;
 
+export const LoginButton = styled.button`
+  color: #579ee0;
+  background-color: #00000000;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
 //// form
 
 export const Form = styled.form`

@@ -1,10 +1,15 @@
 import * as style from './style';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiLogOut } from 'react-icons/bi';
 import logo from '../../images/bag-order.png';
 import { useContext } from 'react';
 import GlobalContext from '../../global/Context';
 import { useNavigate } from 'react-router-dom';
-import { goToHomePage, goToStock } from '../../routes/coordinator';
+import {
+  goToHomePage,
+  goToLoginPage,
+  goToStock,
+} from '../../routes/coordinator';
 
 const Header = (props) => {
   const { sideBar, setSideBar } = useContext(GlobalContext);
@@ -18,7 +23,10 @@ const Header = (props) => {
           onClick={() => goToHomePage(navigate)}
           cursor={'pointer'}
         >
-          <img src={logo} alt={'teste'} />
+          <img
+            src={logo}
+            alt={'teste'}
+          />
           <h1>Seu Mercado Digital</h1>
         </style.ButtonHome>
       </style.HeadersGroups>
@@ -32,15 +40,32 @@ const Header = (props) => {
           <style.Button onClick={() => goToStock(navigate)}>
             Estoque
           </style.Button>
-        )}        
-        <AiOutlineShoppingCart
+        )}
+
+        <style.ButtonShoppingAndLogout
           onClick={() => {
             setSideBar(!sideBar);
           }}
-          size={'40px'}
-          color={'#ffffff'}
-          cursor={'pointer'}
-        />
+        >
+          <AiOutlineShoppingCart
+            size={'40px'}
+            color={'#ffffff'}
+            cursor={'pointer'}
+          />
+        </style.ButtonShoppingAndLogout>
+
+        <style.ButtonShoppingAndLogout
+          onClick={() => {
+            localStorage.removeItem('token');
+            goToLoginPage(navigate);
+          }}
+        >
+          <BiLogOut
+            size={'40px'}
+            color={'#ffffff'}
+            cursor={'pointer'}
+          />
+        </style.ButtonShoppingAndLogout>
       </style.HeadersGroups>
     </style.Container>
   );

@@ -49,3 +49,7 @@ export const ButtonHome = styled.div`
     color: #579ee0;
   }
 `;
+
+export const ButtonShoppingAndLogout = styled.div`
+  background-color: transparent;
+`;
