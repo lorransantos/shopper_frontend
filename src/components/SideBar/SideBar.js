@@ -12,6 +12,22 @@ const SideBar = () => {
 
   const token = localStorage.getItem('token');
 
+  const onClickAddOrder = (id, numberQuantity) => {
+    return addOrder(
+      token,
+      {
+        productId: id,
+        quantity: numberQuantity,
+      },
+      render,
+      setRender
+    );
+  };
+
+  const onClickDeleteOrder = (id) => {
+    return deleteOrder(token, { orderId: id }, render, setRender);
+  };
+
   useEffect(() => {
     getOrders(token, setShoppingCart);
   }, [token, setShoppingCart, render]);
@@ -21,13 +37,14 @@ const SideBar = () => {
     shoppingCart &&
       shoppingCart.forEach((element) => {
         newArray.push(element.price * element.product_qty);
+        console.log('teste');
         return setTotal(
           parseFloat(
-            newArray.reduce((previous, current) => previous + current),
-          ).toFixed(2),
+            newArray.reduce((previous, current) => previous + current)
+          ).toFixed(2)
         );
       });
-  }, [shoppingCart, setTotal, total, setShoppingCart]);
+  }, [shoppingCart]);
 
   return (
     <style.ContainerSideBar sideBar={sideBar}>
@@ -50,49 +67,21 @@ const SideBar = () => {
                   <style.AddOrRemoveButton
                     onClick={() => {
                       item.product_qty > 1
-                        ? addOrder(
-                            token,
-                            {
-                              productId: item.product_id,
-                              quantity: -1,
-                            },
-                            render,
-                            setRender,
-                          )
-                        : deleteOrder(
-                            token,
-                            { orderId: item.id },
-                            render,
-                            setRender,
-                          );
+                        ? onClickAddOrder(item.product_id, -1)
+                        : onClickDeleteOrder(item.id);
                     }}
                   >
                     -
                   </style.AddOrRemoveButton>
                   <style.AddOrRemoveButton
                     onClick={() => {
-                      addOrder(
-                        token,
-                        {
-                          productId: item.product_id,
-                          quantity: 1,
-                        },
-                        render,
-                        setRender,
-                      );
+                      onClickAddOrder(item.product_id, 1);
                     }}
                   >
                     +
                   </style.AddOrRemoveButton>
                   <style.AddOrRemoveButton
-                    onClick={() => {
-                      deleteOrder(
-                        token,
-                        { orderId: item.id },
-                        render,
-                        setRender,
-                      );
-                    }}
+                    onClick={() => onClickDeleteOrder(item.id)}
                   >
                     <BsFillTrashFill />
                   </style.AddOrRemoveButton>

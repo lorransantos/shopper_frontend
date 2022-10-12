@@ -17,6 +17,7 @@ export const Card = styled.div`
   border-radius: 20px;
   width: 15%;
   min-width: 220px;
+  max-width: 250px;
   height: 35vh;
   max-height: 300px;
   display: flex;
@@ -27,7 +28,7 @@ export const Card = styled.div`
   text-align: center;
   background-color: #ffffff;
   h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
   p {
     font-size: 20px;
@@ -37,12 +38,13 @@ export const Card = styled.div`
 
 export const CardTytle = styled.div`
   background-color: #579ee0;
-  min-height: 46%;
-  max-height: 150px;
+  box-sizing: border-box;
+  min-height: 50%;
   display: flex;
+  justify-content: center;
   align-items: center;
   color: #ffffff;
-  padding: 16px;
+  padding: 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;

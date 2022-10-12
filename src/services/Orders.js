@@ -32,8 +32,6 @@ export const addOrder = (token, body, render, setRender) => {
 };
 
 export const deleteOrder = (token, body, render, setRender) => {
-  console.log('remove', body);
-
   axios
     .put(`${BASE_URL}/order/delete-order`, body, {
       headers: {
