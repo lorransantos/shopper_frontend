@@ -10,7 +10,10 @@ export const login = (body, clear, navigate) => {
       localStorage.setItem('token', res.data.token);
       goToHomePage(navigate);
     })
-    .catch((error) => alert(error.response.data.message));
+    .catch((error) => {
+      console.log(error.response.data.message);
+      alert(error.response.data.message);
+    });
 };
 
 export const signup = (body, loginBody, clear, navigate) => {
@@ -19,5 +22,8 @@ export const signup = (body, loginBody, clear, navigate) => {
     .then((res) => {
       login(loginBody, clear, navigate);
     })
-    .catch((error) => alert(error.response.data.message));
+    .catch((error) => {
+      console.log(error.response.data.message);
+      alert(error.response.data.message);
+    });
 };

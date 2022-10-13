@@ -15,7 +15,7 @@ export const Card = styled.div`
   }
   box-shadow: 0px 0px 10px #cccccc;
   border-radius: 20px;
-  width: 15%;
+  width: 10%;
   min-width: 220px;
   max-width: 250px;
   height: 35vh;
@@ -33,6 +33,10 @@ export const Card = styled.div`
   p {
     font-size: 20px;
     font-weight: bold;
+  }
+  @media (max-width: 700px) {
+    min-width: 180px;
+    height: 30vh;
   }
 `;
 

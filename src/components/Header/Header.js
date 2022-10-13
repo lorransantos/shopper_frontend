@@ -48,7 +48,7 @@ const Header = (props) => {
           }}
         >
           <AiOutlineShoppingCart
-            size={'40px'}
+            size={'32px'}
             color={'#ffffff'}
             cursor={'pointer'}
           />
@@ -61,7 +61,7 @@ const Header = (props) => {
           }}
         >
           <BiLogOut
-            size={'40px'}
+            size={'32px'}
             color={'#ffffff'}
             cursor={'pointer'}
           />

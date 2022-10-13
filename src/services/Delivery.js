@@ -9,8 +9,8 @@ export const addDeliveryOrder = (token, body, clear) => {
       },
     })
     .then((res) => {
-      alert('Compra realizada com sucesso!')
+      alert('Compra realizada com sucesso!');
       clear();
     })
-    .catch((error) => alert(error.response.data));
+    .catch((error) => alert(error.response.data.message));
 };

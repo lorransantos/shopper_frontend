@@ -18,6 +18,9 @@ export const SideBar = styled.div`
   img {
     width: 350px;
   }
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const LoginContainer = styled.div`
@@ -28,6 +31,9 @@ export const LoginContainer = styled.div`
   height: 100vh;
   background-image: linear-gradient(120deg, #579ee0, #800080);
   box-shadow: -4px 0px 12px #999999;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const LoginCard = styled.div`
@@ -44,6 +50,11 @@ export const LoginCard = styled.div`
     width: 100%;
     height: 16px;
     background-color: #000000;
+  }
+  @media (max-width: 600px) {
+    width: 80%;
+    height: 50%;
+    min-height: 300px;
   }
 `;
 

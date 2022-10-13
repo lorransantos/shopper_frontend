@@ -27,6 +27,11 @@ export const Button = styled.button`
   padding: 4px 8px;
   box-shadow: 0px 0px 4px #cccccc;
   color: #579ee0;
+  @media (max-width: 600px) {
+    font-size: 16px;
+    padding: 4px 4px;
+    min-width: 70px;
+  }
 `;
 
 export const HeadersGroups = styled.div`
@@ -48,8 +53,19 @@ export const ButtonHome = styled.div`
     font-size: 24px;
     color: #579ee0;
   }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 16px;
+      width: 50%;
+    }
+    img {
+      width: 40px;
+    }
+  }
 `;
 
 export const ButtonShoppingAndLogout = styled.div`
   background-color: transparent;
+  @media (max-width: 600px) {
+  }
 `;

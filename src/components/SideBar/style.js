@@ -27,6 +27,10 @@ export const ContainerSideBar = styled.div`
       width: 300px;
     }
   }
+  @media (max-width: 600px) {
+    width: 70%;
+    max-height: 70%;
+  }
 `;
 
 export const Card = styled.div`

@@ -11,7 +11,7 @@ export const getOrders = (token, setShoppingCart) => {
     .then((res) => {
       setShoppingCart(res.data);
     })
-    .catch((error) => alert(error.response.data));
+    .catch((error) => alert(error.response.data.message));
 };
 
 export const addOrder = (token, body, render, setRender) => {
@@ -25,7 +25,7 @@ export const addOrder = (token, body, render, setRender) => {
       setRender(!render);
     })
     .catch((error) => {
-      alert(error.response.data);
+      alert(error.response.data.message);
     });
 };
 
@@ -40,6 +40,6 @@ export const deleteOrder = (token, body, render, setRender) => {
       setRender(!render);
     })
     .catch((error) => {
-      alert(error.response.data);
+      alert(error.response.data.message);
     });
 };
