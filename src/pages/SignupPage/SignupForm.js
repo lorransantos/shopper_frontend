@@ -18,7 +18,6 @@ const SignupForm = () => {
       password: form.password,
     };
     signup(form, loginBody, clear, navigate);
-    console.log(form, clear);
   };
 
   return (

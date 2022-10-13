@@ -9,22 +9,15 @@ export const login = (body, clear, navigate) => {
       clear();
       localStorage.setItem('token', res.data.token);
       goToHomePage(navigate);
-      console.log(res.data.token);
     })
-    .catch((error) => error.data);
+    .catch((error) => alert(error.response.data.message));
 };
 
 export const signup = (body, loginBody, clear, navigate) => {
   axios
     .post(`${BASE_URL}/user/signup`, body)
     .then((res) => {
-      console.log(res);
       login(loginBody, clear, navigate);
     })
-    .catch((err) => console.log(err));
+    .catch((error) => alert(error.response.data.message));
 };
-
-// {
-//   "email": "goku@gmail.com",
-//   "password": "123456"
-// }

@@ -34,10 +34,12 @@ const SideBar = () => {
 
   useEffect(() => {
     const newArray = [];
+    if (shoppingCart.length < 1) {
+      setTotal(0);
+    }
     shoppingCart &&
       shoppingCart.forEach((element) => {
         newArray.push(element.price * element.product_qty);
-        console.log('teste');
         return setTotal(
           parseFloat(
             newArray.reduce((previous, current) => previous + current)

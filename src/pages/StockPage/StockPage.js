@@ -15,7 +15,6 @@ const StockPage = () => {
 
   useEffect(() => {
     getProducts(token, setProducts);
-    console.log('pagina de estoque');
   }, [token, setProducts]);
 
   return (

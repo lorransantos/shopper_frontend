@@ -12,5 +12,5 @@ export const addDeliveryOrder = (token, body, clear) => {
       alert('Compra realizada com sucesso!')
       clear();
     })
-    .catch((err) => console.log(err.data));
+    .catch((error) => alert(error.response.data));
 };
